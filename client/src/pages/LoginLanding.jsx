@@ -1,10 +1,11 @@
+import LoginLeftside from "../components/LoginLeftside"
 
-const loginLanding = () => {
+const LoginLanding = () => {
   return (
-    <div>
-      LoginLanding
+    <div className="min-h-screen flex flex-col md:flex-row">
+      <LoginLeftside />
     </div>
   )
 }
 
-export default loginLanding
+export default LoginLanding

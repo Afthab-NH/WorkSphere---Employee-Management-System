@@ -1,6 +1,5 @@
 import { Toaster } from "react-hot-toast"
 import { Navigate, Route, Routes } from "react-router-dom"
-import loginLanding from "./pages/loginLanding"
 import Layout from "./pages/Layout"
 import Dashboard from "./pages/Dashboard"
 import Employees from "./pages/Employees"
@@ -9,6 +8,8 @@ import Leave from "./pages/Leave"
 import Payslips from "./pages/Payslips"
 import Settings from "./pages/Settings"
 import PrintPayslip from "./pages/PrintPayslip"
+import LoginForm from "./components/LoginForm"
+import LoginLanding from "./pages/LoginLanding"
 
 
 const App = () => {
@@ -16,7 +17,11 @@ const App = () => {
     <>
       <Toaster />
       <Routes>
-        <Route path="/login" element={<loginLanding />} />
+        <Route path="/login" element={ <LoginLanding/>} />
+      
+      <Route path="/login/admin" element={<LoginForm role="admin" title="Admin Portal" subtitle="Sign in to manage the Organization" />} />
+      <Route path="/login/employee" element={<LoginForm role="employee" title="Employee Portal" subtitle="Sign in to access your Account" />} />
+
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/employees" element={<Employees />} />
