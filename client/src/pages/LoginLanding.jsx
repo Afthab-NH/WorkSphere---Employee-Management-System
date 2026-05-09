@@ -1,5 +1,5 @@
 import LoginLeftside from "../components/LoginLeftside"
-import { Shieldicon } from "lucide-react"
+import { ShieldIcon } from "lucide-react"
 
 const LoginLanding = () => {
   
@@ -8,7 +8,7 @@ const LoginLanding = () => {
       to: "/login/admin",
       title: "Admin portal",
       description: "Manage employees, departments, payroll, and system configurations.",
-      icon: Shieldicon
+      icon: ShieldIcon
     },
     {
       to: "/login/admin",
