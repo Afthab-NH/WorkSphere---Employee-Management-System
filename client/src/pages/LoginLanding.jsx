@@ -1,6 +1,24 @@
 import LoginLeftside from "../components/LoginLeftside"
+import { Shieldicon } from "lucide-react"
 
 const LoginLanding = () => {
+  
+  const portalOptions = [
+    {
+      to: "/login/admin",
+      title: "Admin portal",
+      description: "Manage employees, departments, payroll, and system configurations.",
+      icon: Shieldicon
+    },
+    {
+      to: "/login/admin",
+      title: "Admin portal",
+      description: "Manage employees, departments, payroll, and system configurations.",
+      icon: Shieldicon
+    }
+  ]
+
+  
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       <LoginLeftside />
@@ -10,7 +28,7 @@ const LoginLanding = () => {
         {/* header */}
         <div className="mb-10 text-center md:text-left">
           <h2 className="text-3xl font-medium text-slate-900 tracking-tight mb-3">Welcome Back!</h2>
-          <p>
+          <p className="text-slate-500">
             Select your portal to securely access the system.
           </p>
         </div>
