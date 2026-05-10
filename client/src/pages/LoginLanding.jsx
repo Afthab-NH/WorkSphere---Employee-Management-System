@@ -1,6 +1,7 @@
 import LoginLeftside from "../components/LoginLeftside"
 import { ArrowRightIcon, Link, ShieldIcon, UserIcon } from "lucide-react"
 
+
 const LoginLanding = () => {
   
   const portalOptions = [
@@ -48,7 +49,7 @@ const LoginLanding = () => {
 
 
         {/* footer */}
-        <div>
+        <div className="mt-12 text-center md:text-left text-sm text-slate-400">
           <p> © {new Date().getFullYear()} WorkSphere. All Rights Reserved. </p>
         </div>
 
