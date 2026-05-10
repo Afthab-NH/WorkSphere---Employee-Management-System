@@ -13,7 +13,7 @@ const LoginLanding = () => {
     {
       to: "/login/employee",
       title: "Employee Portal",
-      description: "View your profiles,"
+      description: "View your profiles,track attendence, request time off, and access payslips."
     }
   ]
 
