@@ -6,15 +6,14 @@ const LoginLanding = () => {
   const portalOptions = [
     {
       to: "/login/admin",
-      title: "Admin portal",
+      title: "Admin Portal",
       description: "Manage employees, departments, payroll, and system configurations.",
       icon: ShieldIcon
     },
     {
-      to: "/login/admin",
-      title: "Admin portal",
-      description: "Manage employees, departments, payroll, and system configurations.",
-      icon: Shieldicon
+      to: "/login/employee",
+      title: "Employee Portal",
+      description: "View your profiles,"
     }
   ]
 
@@ -48,4 +47,4 @@ const LoginLanding = () => {
 
 export default LoginLanding
 
-//41:49
+
