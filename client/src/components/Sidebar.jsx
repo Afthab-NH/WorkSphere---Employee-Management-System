@@ -96,7 +96,9 @@ const Sidebar = () => {
             </div>
 
             {/* Logout */}
-
+                <div>
+                    
+                </div>
 
         </>
     )
