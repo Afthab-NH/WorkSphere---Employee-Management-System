@@ -1,31 +1,35 @@
-import { ArrowRightIcon, Calendar1Icon, DollarSignIcon, FileTextIcon } from 'lucide-react';
+import { Building2Icon, Calendar1Icon, FileTextIcon, UserIcon } from 'lucide-react'
 import React from 'react'
-import { Link } from 'react-router-dom';
 
-const EmployeeDashboard = ({data}) => {
+const AdminDashboard = ({ data }) => {
 
-    const emp = data.employee;
-
-    const cards = [
+    const stats = [
+        {
+            icon: UserIcon,
+            value: data.totalEmployees,
+            label: "Total Employees",
+            description: "Active Workforce"
+        }, 
+        {
+            icon: Building2Icon,
+            value: data.totalDepartments,
+            label: "Departments",
+            description: "Organization Units"
+        },
         {
             icon: Calendar1Icon,
-            value: data.currentMonthAttendance,
-            title: "Days Present",
-            subtitle: "This Month"
+            value: data.todayAttendance,
+            label: "Today's Attendence",
+            description: "Checked-In Today"
         },
         {
             icon: FileTextIcon,
             value: data.pendingLeaves,
-            title: "Pending Leaves",
-            subtitle: "Awaiting Approval", 
+            label: "pendingLeaves",
+            description: "Awaiting Approval"
         },
-        {
-            icon: DollarSignIcon,
-            value: data.latestPayslip ? `$${data.latestPayslip.netSalary?.toLocaleString()}` : "N/A",
-            title: "Latest Payslip",
-            subtitle: "Most Recent Payout",
-        }
     ]
+
 
   return (
     <div className='animate-fade-in'>
@@ -57,9 +61,8 @@ const EmployeeDashboard = ({data}) => {
         </Link>
 
     </div>
-
     </div>
   )
 }
 
-export default EmployeeDashboard
+export default AdminDashboard
