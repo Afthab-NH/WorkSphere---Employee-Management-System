@@ -23,6 +23,8 @@ const Employee = () => {
     fetchEmployees();
   },[])
 
+  const filtered = employees.filter((emp)=> `${emp.firstName} ${emp.lastName} ${emp.position}`.toLowerCase().includes(search.toLowerCase()))
+
 
 
   return (
@@ -60,9 +62,27 @@ const Employee = () => {
 
       {/* Employee Cards */}
 
+          {loading ? (
+            <div className="flex justify-center p-12">
+              <div className="animate-spin h-8 w-8  border-2 border-indigo-600 border-t-transparent rounded-full" />
+            </div> 
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+                {filtered.length === 0 ? (
+                  <p className="col-span-full text-center py-16 text-slice-400 bg-white rounded-2xl border border-dashed border-slate-200">No Employees Found!</p>
+                ) : (
+                  filtered.map((emp)=> (<p key={emp.id}>{emp.firstName}</p>))
+                )}
+            </div>
+          )}
+
+
+
 
     </div>
   )
 }
 
 export default Employee
+
+//2:29:43
