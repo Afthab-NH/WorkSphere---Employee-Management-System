@@ -4,7 +4,7 @@ const EmployeeCard = ({employee, onDelete, onEdit}) => {
   return (
     <div className='group relative card card-hover overflow-hidden'>
         <div></div>
-        <div>
+        <div className='p-5'>
             <h3 className='text-slate-900'>
                 {employee.firstName} {employee.lastName}
             </h3>
