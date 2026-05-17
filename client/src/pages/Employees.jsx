@@ -8,7 +8,9 @@ const Employee = () => {
   const [employees, setEmployees] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState("");
-  const [selectedDepartment, setSelectedDepartment] =useState("")
+  const [selectedDepartment, setSelectedDepartment] = useState("")
+  const [editEmployee, setEditEmployee] = useState(null)
+  const [showCreateModal, setShowCreateModal] = useState(false)
 
   const fetchEmployees = useCallback(async()=> {
     setLoading(true)
@@ -72,7 +74,7 @@ const Employee = () => {
                 {filtered.length === 0 ? (
                   <p className="col-span-full text-center py-16 text-slice-400 bg-white rounded-2xl border border-dashed border-slate-200">No Employees Found!</p>
                 ) : (
-                  filtered.map((emp)=> <EmployeeCard key={emp.id} employee={emp} onDelete={fetchEmployees} onEdit={} />)
+                  filtered.map((emp)=> <EmployeeCard key={emp.id} employee={emp} onDelete={fetchEmployees} onEdit={(e)=> setEditEmployee(e)} />)
                 )}
             </div>
           )}
