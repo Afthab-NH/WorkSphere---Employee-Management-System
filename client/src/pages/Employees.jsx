@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react"
 import { dummyEmployeeData, DEPARTMENTS } from "../assets/assets"
-import { Plus, Search } from "lucide-react"
+import { Plus, Search, X } from "lucide-react"
 import EmployeeCard from "../components/EmployeeCard"
 
 const Employee = () => {
@@ -41,7 +41,7 @@ const Employee = () => {
             <p className="page-subtitle">Manage your Team Members</p>
           </div>
 
-          <button className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center">
+          <button onClick={()=>setShowCreateModal(true)} className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center">
             <Plus size={16} /> Add Employee
           </button>
 
@@ -64,7 +64,6 @@ const Employee = () => {
 
 
       {/* Employee Cards */}
-
           {loading ? (
             <div className="flex justify-center p-12">
               <div className="animate-spin h-8 w-8  border-2 border-indigo-600 border-t-transparent rounded-full" />
@@ -79,7 +78,31 @@ const Employee = () => {
             </div>
           )}
 
+          {/* Create Employee Modal */}
 
+          {showCreateModal && (
+            <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={()=>setShowCreateModal(false)}>
+              <div className="fixed inset-0">
+                  <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl my-8 animate-fade-in" onClick={(e)=>e.stopPropogation()}>
+                    <div className="flex items-center justify-between p-6 pb-0">
+                      <div>
+                        <h2 className="text-lg font-semibold text-slate-900">Add New Employee</h2>
+                        <p className="text-sm text-slate-500 mt-0.5">Create a User Account and Employee Profile</p>
+                      </div>
+                      <button onClick={()=> setShowCreateModal(false)} className="p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-600">
+                        <X className="w-5 h-5" />
+                      </button>
+                    </div>
+                    <div className="p-6">
+                      form
+                    </div>
+                  </div>
+              </div>
+            </div>
+          )}
+
+
+          {/* Edit Employee Modal */}
 
 
     </div>
