@@ -81,8 +81,8 @@ const Employee = () => {
           {/* Create Employee Modal */}
 
           {showCreateModal && (
-            <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-center justify-center p-4" onClick={()=>setShowCreateModal(false)}>
-              <div className="fixed inset-0">
+            <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={()=>setShowCreateModal(false)}>
+              
                   <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl my-8 animate-fade-in" onClick={(e)=>e.stopPropagation()}>
                     <div className="flex items-center justify-between p-6 pb-0">
                       <div>
@@ -97,7 +97,6 @@ const Employee = () => {
                       form
                     </div>
                   </div>
-              </div>
             </div>
           )}
 
@@ -108,12 +107,18 @@ const Employee = () => {
               <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl my-8 animate-fade-in" onClick={(e)=>e.stopPropagation()}>
                 <div className="flex items-center justify-between p-6 pb-0">
                   <div>
-                    <h2></h2>
-                    <p></p>
+                    <h2 className="text-lg font-semibold text-slate-900">Edit Employee</h2>
+                        <p className="text-sm text-slate-500 mt-0.5">Update Employee Details</p>
+                      </div>
+                      <button onClick={()=> setEditEmployee(null)} className="p-2 rounded-lg hover:bg-slate-100 transition-colors text-slate-400 hover:text-slate-600">
+                        <X className="w-5 h-5" />
+                      </button>
+                  </div>
+                  <div className="p-6">
+                    form
                   </div>
                 </div>
               </div>
-            </div>
           )}
 
 
