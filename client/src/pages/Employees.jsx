@@ -51,7 +51,7 @@ const Employee = () => {
 
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/4 transform-translate-y-1/2 text-slate-400 w-4 h-4" />
+          <Search className="absolute left-3.5 top-1/4 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
           <input type="text" placeholder="Search Employee..." className="w-full pl-10" onChange={(e)=>setSearch(e.target.value)} value={search} />
         </div>
         <select value={selectedDepartment} onChange={(e)=>setSelectedDepartment(e.target.value)} className="max-w-40">
@@ -81,9 +81,9 @@ const Employee = () => {
           {/* Create Employee Modal */}
 
           {showCreateModal && (
-            <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={()=>setShowCreateModal(false)}>
+            <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-center justify-center p-4" onClick={()=>setShowCreateModal(false)}>
               <div className="fixed inset-0">
-                  <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl my-8 animate-fade-in" onClick={(e)=>e.stopPropogation()}>
+                  <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl my-8 animate-fade-in" onClick={(e)=>e.stopPropagation()}>
                     <div className="flex items-center justify-between p-6 pb-0">
                       <div>
                         <h2 className="text-lg font-semibold text-slate-900">Add New Employee</h2>
@@ -103,6 +103,18 @@ const Employee = () => {
 
 
           {/* Edit Employee Modal */}
+          {editEmployee && (
+          <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={()=>setEditEmployee(null)}>
+              <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl my-8 animate-fade-in" onClick={(e)=>e.stopPropagation()}>
+                <div className="flex items-center justify-between p-6 pb-0">
+                  <div>
+                    <h2></h2>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
 
     </div>
